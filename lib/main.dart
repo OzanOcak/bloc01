@@ -45,7 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text('you are number is'),
-                  Text('${snapshot.data}'),
+                  Text('${snapshot.data}',
+                      style: Theme.of(context).textTheme.headline4),
                 ],
               );
             }),
@@ -67,5 +68,11 @@ class _MyHomePageState extends State<MyHomePage> {
             )
           ]),
     );
+  }
+
+  @override
+  void dispose() {
+    _bloc.dispose();
+    super.dispose();
   }
 }
